@@ -33,6 +33,7 @@ test.describe('Calculate Employee Cost', () => {
         await page.getByRole('spinbutton').fill('100000');
         await page.getByRole('button', { name: 'Get Quote' }).click();
         await expect(page.locator('#react-target')).toContainText('Hiring in Australia');
+        await page.screenshot({ path: 'screenshot.png', fullPage: true });
         await expect(page.getByRole('cell', { name: 'A$ 112,927' })).toBeVisible();
       });
 
